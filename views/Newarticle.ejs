@@ -1,0 +1,40 @@
+    
+    <%- include ('./header')%>
+
+     <%- include('./navbaar') %>
+   
+
+     <title>Add Tweet</title>
+      <h5> Add a Tweet</h5>
+  
+
+
+     <form method="POST" action="/Newarticle" class="form" >
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title"> 
+            <div>
+                <% if(errors && errors.title) { %>
+                <span class="Warning"><%=errors.title%></span>
+                <% } %>
+            </div>
+        </div>
+        
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label" >Tweet</label>
+            <input class="form-control" id="exampleFormControlTextarea1" rows="3" name="article">
+            <div>
+                <% if(errors && errors.article) { %>
+                <span class="Warning"><%=errors.article%></span>
+            <% } %>
+            </div>
+        </div>
+            
+    <button type="submit"  name="Send"> Send</button>
+   
+</form>
+
+
+<%- include('./Footer') %>
+

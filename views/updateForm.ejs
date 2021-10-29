@@ -1,0 +1,39 @@
+    
+    <%- include ('./header')%>
+
+     <%- include('./navbaar') %>
+
+     <title>Edit Tweet</title>
+       <h5> Edit Tweet</h5>
+
+<form method="POSt" action="/edit/<%= result.id %>" class="form" >
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input  type="text" class="form-control" id="exampleFormControlInput1" name="title" value="<%= result.title %>">
+        <div>
+            <% if(errors && errors.title) { %>
+                <span class="Warning">
+                    <%=errors.title%>
+                </span>
+                <% } %>
+        </div>
+    </div>
+   
+  
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label" >Tweet</label>
+        <input class="form-control" id="exampleFormControlTextarea1" rows="3" name="article" value="<%= result.article %>" >
+        <div>
+            <% if(errors && errors.article) { %>
+                <span class="Warning">
+                    <%=errors.article%>
+                </span>
+                <% } %>
+        </div>
+    </div>
+      
+    <button type="submit" name="Send"> Send </button>
+</form>
+
+
+<%- include('./Footer') %>
